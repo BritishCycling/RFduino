@@ -62,6 +62,7 @@ extern void init( void ) ;
  * \return Number of milliseconds since the program started (uint32_t)
  */
 extern uint32_t millis( void ) ;
+extern uint64_t millis64( void ) ;
 
 /**
  * \brief Returns the number of microseconds since the Arduino board began running the current program.
@@ -74,6 +75,7 @@ extern uint32_t millis( void ) ;
  * \note There are 1,000 microseconds in a millisecond and 1,000,000 microseconds in a second.
  */
 extern uint32_t micros( void ) ;
+extern uint64_t micros64( void ) ;
 
 /**
  * \brief Pauses the program for the amount of time (in miliseconds) specified as parameter.
