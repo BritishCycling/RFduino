@@ -4,39 +4,45 @@
 
 [Video](http://www.youtube.com/watch?v=arWBdGwCJcM)  
 
+## Communicating with us
+
+The best way to communiate with us is on the [RFduino Forum](http://forum.RFduino.com).
+
 ## Installation
 
 * Get the [RFduino hardware](http://RFduino.com).
 
 * Install the [FTDI drivers](http://www.ftdichip.com/Drivers/VCP.htm).
 
-* Download [Arduino 1.6.3](http://arduino.cc/en/Main/Software) on newer.
+* Download [Arduino 1.6.6](http://arduino.cc/en/Main/Software) or newer.
   * _Mac OS X_: Requires Java 6 to be installed. Available [here](https://support.apple.com/kb/DL1572?locale=en_US).
 
 * Open Arduino
-  * edit preferences, and add rfduino.com as the Server (HTTP) under Proxy Settings and save.
+  * Edit Preferences, and add ```http://rfduino.com/package_rfduino166_index.json``` to Additional Board Manager URLs and save.
       ![preferences](preferences.png)
-  * Open the Boards Manager under Tools->Board menu.
+  * Open the Boards Manager under ```Tools->Board``` menu.
   * Select the RFduino package at the end of the list, and click Install to install it.
-  * Your new board will now show up in the Tools->Board menu.
+  * Your new board will now show up in the ```Tools->Board``` menu.
 
 Select the board and port, and you're ready to go!
 
-Detailed instructions are available in our [Quick Start Guide](http://files.rfdigital.com/rfduino.quick.start.guide.pdf).
+<strong>Note</strong>: Arduino may not start properly if another version has been previously installed and the Preferences are incompatible.  You can reset the Preferences by deleting the following directory:
+* _Windows_: %appdata%/Arduino15 (open File Explorer, enter %appdata% into the Address Bar and press Enter)
+* _Mac OS X_: ~/Library/Arduino15 (open Finder, and ```Go->Go to Folder```)
+* _Linux_: ~/.arduino15
 
 ## Linux
 
 ```
 // FTDI drivers are not needed (they are built into the kernel)
-wget http://downloads.arduino.cc/arduino-1.6.3-linux64.tar.xz
-tar -xf arduino-1.6.3-linux64.tar.xz
-```
+
+wget http://downloads.arduino.cc/arduino-1.6.6-linux64.tar.xz
+tar -xf arduino-1.6.6-linux64.tar.xz
 
 Ubuntu: sudo apt-get install default-jre
 Fedora: sudo yum install jre
 OpenSUSE: sudo zypper install jre
 
-```
 // otherwise the com port open will fail with permission denied (you must logout/login for change to take effect)
 sudo usermod -aG dialout <username>
 ```
@@ -45,11 +51,11 @@ sudo usermod -aG dialout <username>
 
 * Attach the USB shield
 
-* Select RFduino from the ```Tools/Board``` menu
+* Select RFduino from the ```Tools->Board``` menu
 
-* Select the port from the ```Tools/Port``` menu
+* Select the port from the ```Tools->Port``` menu
 
-* Select an example from the ```Files/Examples/RFduinoNonBLE``` or ```Files/Examples/RFduinoBLE``` directory
+* Select an example from the ```File->Examples->RFduinoNonBLE``` or ```File->Examples-?RFduinoBLE``` directory
 
 * Select ```Upload``` to compile, upload and execute the sketch
 
@@ -59,8 +65,4 @@ sudo usermod -aG dialout <username>
 
 ## RFduinoApps
 
-Check out the [RFduinoApps](http://github/RFduino/RFduinoApps) repository for iPhone App source code & RFduino to Raspberry Pi integration projects.
-
-# Communicating with us
-
-The best way to communiate with us is on the [RFduino Forum](http://forum.RFduino.com).
+Check out the [RFduinoApps](http://github.com/RFduino/RFduinoApps) repository for iPhone App source code & RFduino to Raspberry Pi integration projects.
